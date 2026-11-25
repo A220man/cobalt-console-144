@@ -37,7 +37,7 @@ def check_yield_from_with_comments(code: str) -> List[str]:
     pattern_block = r'yield\s*/\*[^*]*\*+(?:[^/*][^*]*\*)*\/.*\bfrom\b'
     
     # Pattern 2: yield followed by // comment then from
-    pattern_line = r'yield\s*//[^\n]*\bfrom\b'
+    pattern_line = r'yield\s*//.*?\bfrom\b'
     
     # Check pattern 1: yield /* comment */ from
     matches_block = re.findall(pattern_block, code, re.DOTALL)
